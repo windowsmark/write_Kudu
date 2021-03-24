@@ -1,4 +1,4 @@
-[debug] [monitoreo_kafka_col] Classpath dependencies List()
-[debug] [monitoreo_kafka_col] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'monitoreo_kafka_col' to 'C:\Users\juanc\OneDrive\Documents\Monitoreo_kafka_col\.bloop\monitoreo_kafka_col.json'
-[success] Generated .bloop\monitoreo_kafka_col.json
+[debug] [write_tokudu_from_kudu] Classpath dependencies List()
+[debug] [write_tokudu_from_kudu] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'write_tokudu_from_kudu' to 'C:\Users\juanc\OneDrive\Documents\Write_tokudu_from_kudu\.bloop\write_tokudu_from_kudu.json'
+[success] Generated .bloop\write_tokudu_from_kudu.json

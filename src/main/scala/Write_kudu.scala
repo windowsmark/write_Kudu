@@ -31,8 +31,8 @@ object Write_kudu{
 
 		
 		//iniciar variables
-		val (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, ss_batch_secs, spark_log_level, group_id, security, sasl_mechanism, identificador) = StreamingInit.configInit()
-		val cmd = "kinit pycjulio -kt pycjulio.keytab"
+		val (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, ss_batch_secs, spark_log_level, group_id, security, sasl_mechanism, identificador, usuario_kerberos) = StreamingInit.configInit()
+		val cmd = "kinit %s -kt %s.keytab".format(usuario_kerberos, usuario_kerberos)
 		val output = cmd.!!
 		Utils.printlog(output)
 

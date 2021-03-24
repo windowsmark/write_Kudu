@@ -1,7 +1,7 @@
 
 name := "Write_kudu"
 
-version := "1.6"
+version := "1.7"
 resolvers += "Cloudera Repository" at "https://repository.cloudera.com/artifactory/cloudera-repos/"
 
 

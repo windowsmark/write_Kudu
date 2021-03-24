@@ -1,7 +1,7 @@
 import scala.util.parsing.json.JSON
 
 object StreamingInit {
-    def configInit():(String, String, String, String, String, String, String, String, String, String, String, String)={
+    def configInit():(String, String, String, String, String, String, String, String, String, String, String, String, String)={
         var jsonFile: String = "config.json"    
         var jsonContent: String = scala.io.Source.fromFile(jsonFile).mkString
         var json = JSON.parseFull(jsonContent)
@@ -22,11 +22,12 @@ object StreamingInit {
         val security = config.get("security").get.asInstanceOf[String]
         val sasl_mechanism = config.get("sasl_mechanism").get.asInstanceOf[String]
         val identificador = config.get("identificador").get.asInstanceOf[String]
+        val usuario_kerberos = config.get("usuario_kerberos").get.asInstanceOf[String]
         // val capacidad = config.get("capacidad").get.asInstanceOf[String]
         // val list_name_div = config.get("list_name_div").get.asInstanceOf[List[String]]
         // val col_name_div = config.get("col_name_div").get.asInstanceOf[String]
         // val time_zone = config.get("time_zone").get.asInstanceOf[String]
-        return (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, ss_batch_secs, spark_log_level, group_id, security, sasl_mechanism, identificador)
+        return (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, ss_batch_secs, spark_log_level, group_id, security, sasl_mechanism, identificador, usuario_kerberos)
     }
 }
 

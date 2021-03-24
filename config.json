@@ -11,5 +11,6 @@
   "group_id" : "default",
   "security" : "PLAINTEXT",
   "sasl_mechanism" : "GSSAPI",
-  "identificador": "Mbaas_General"
+  "identificador": "Mbaas_General",
+  "usuario_kerberos": "pwalmeid"
 }
