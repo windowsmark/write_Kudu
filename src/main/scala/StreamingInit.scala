@@ -15,7 +15,7 @@ object StreamingInit {
         val path_nt = config.get("path_nt").get.asInstanceOf[String]
         val path_batch = config.get("path_batch").get.asInstanceOf[String]
         val kudu_master = config.get("kudu_master").get.asInstanceOf[String]
-        val ss_batch_secs = config.get("ss_batch_secs").get.asInstanceOf[String]
+        val delimitador = config.get("delimitador").get.asInstanceOf[String]
         val spark_log_level = config.get("spark_log_level").get.asInstanceOf[String]
         // val brokers = config.get("brokers").get.asInstanceOf[String]
         val group_id = config.get("group_id").get.asInstanceOf[String]
@@ -27,7 +27,7 @@ object StreamingInit {
         // val list_name_div = config.get("list_name_div").get.asInstanceOf[List[String]]
         // val col_name_div = config.get("col_name_div").get.asInstanceOf[String]
         // val time_zone = config.get("time_zone").get.asInstanceOf[String]
-        return (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, ss_batch_secs, spark_log_level, group_id, security, sasl_mechanism, identificador, usuario_kerberos)
+        return (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, delimitador,spark_log_level, group_id, security, sasl_mechanism, identificador, usuario_kerberos)
     }
 }
 

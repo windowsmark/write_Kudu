@@ -5,7 +5,7 @@
   "path_nt": "impala::8096_woombat.motorriesgo_whitelist_1",
   "path_batch": "batch_rtd.json",
   "kudu_master" : "savcmaster-14f94ce7.ms.davivienda.cloud, savcmaster-1af6073c.ms.davivienda.cloud, savcmaster-2cb71931.ms.davivienda.cloud",
-  "ss_batch_secs" : "2",
+  "delimitador" : ",",
   "spark_log_level" : "WARN",
   "brokers" : "10.196.65.250:9092,10.196.66.18:9092,10.196.65.232:9092",
   "group_id" : "default",

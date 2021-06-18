@@ -31,7 +31,7 @@ object Write_kudu{
 
 		
 		//iniciar variables
-		val (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, ss_batch_secs, spark_log_level, group_id, security, sasl_mechanism, identificador, usuario_kerberos) = StreamingInit.configInit()
+		val (log_level, spark_master, path_table, path_nt, path_batch, kudu_master, delimitador, spark_log_level, group_id, security, sasl_mechanism, identificador, usuario_kerberos) = StreamingInit.configInit()
 		val cmd = "kinit %s -kt %s.keytab".format(usuario_kerberos, usuario_kerberos)
 		val output = cmd.!!
 		Utils.printlog(output)
@@ -61,8 +61,8 @@ object Write_kudu{
 		// val new_df = spark.read.format("org.apache.kudu.spark.kudu").options(Map("kudu.master" -> kudu_master, "kudu.table" -> path_table)).load
 		
 		// val new_df = spark.read.format("org.apache.kudu.spark.kudu").options(Map("kudu.master" -> kudu_master, "kudu.table" -> path_table)).load
-		val new_df = spark.read.format("csv").option("header","true").option("delimiter",";").load(path_table)
-		if (log_level=="DEBUG") {Utils.printlog(" DEBUG StreamingX: ===> Csv cargado")}
+		val new_df = spark.read.format("csv").option("header","true").option("delimiter",delimitador).load(path_table)
+		if (log_level=="DEBUG") {Utils.printlog(" DEBUG StreamingX: ===> Csv Loaded")}
 
 		// var n_df = wl_table.select("periodo","indice_xml","fecha_cargue_kudu","nro_tx","cod_respuesta","mensaje_respuesta","nro_identificacion","tipo_identificacion","descripcion_campana","tipo_campana","canal_redencion","cupo_preaprobado_producto","rpr_base","rpr_fecha","producto_movil","familia_producto","caracteristica_1","caracteristica_2","caracteristica_3","fecha_calificacion_base","fecha_inicio_campana","hora_inicio_campana","fecha_fin_campana","hora_fin_campana","flg_campana_vigente","cod_promocion","cod_aliado","score_1_aliado","score_2_aliado","score_3_aliado","score_4_aliado","score_5_aliado","score_6_aliado","score_7_aliado","flg_calificado_aliado","tasa_whitelist","grupo_riesgo")
 		
